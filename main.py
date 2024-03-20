@@ -50,7 +50,7 @@ class AudioFileHandler(FileSystemEventHandler):
         self.model: WhisperModel = model
         self.webhook_url: str = webhook_url
 
-    def process_file(self, file_path: Path) -> None:
+    def _process_file(self, file_path: Path) -> None:
         """Process the specified audio file and send the transcription via Discord."""
         print(f"Processing new audio file: {file_path}")
         transcription: str = transcribe_audio(file_path, self.model)
@@ -59,11 +59,11 @@ class AudioFileHandler(FileSystemEventHandler):
 
     def on_created(self, event: FileSystemEvent) -> None:
         if Path(event.src_path).suffix == ".mp3":
-            self.process_file(Path(event.src_path))
+            self._process_file(Path(event.src_path))
 
     def on_moved(self, event: FileSystemEvent) -> None:
         if Path(event.src_path).suffix == ".mp3":
-            self.process_file(Path(event.src_path))
+            self._process_file(Path(event.src_path))
 
 
 if __name__ == "__main__":
