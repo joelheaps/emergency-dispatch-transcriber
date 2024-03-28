@@ -44,6 +44,8 @@ packaging==24.0
     #   onnxruntime
 protobuf==5.26.0
     # via onnxruntime
+pydub==0.25.1
+    # via -r requirements.in
 pyyaml==6.0.1
     # via
     #   ctranslate2
