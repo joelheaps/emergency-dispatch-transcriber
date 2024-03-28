@@ -1,3 +1,5 @@
-# Fire and Rescue Tone Page Notifier
+# Emergency Dispatch Transcriber <img src="logo.jpg" alt="Logo" width="25">
 
-The start of something cool...
+
+
+FireDispatchTranscriber is a Python app that transcribes emergency pager audio recordings (from TwoToneDetect, for example) to text and sends Discord notifications to first responders.
